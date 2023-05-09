@@ -108,5 +108,7 @@ Rails.application.routes.draw do
   # Bookmarks
   get("/bookmarks", { :controller => "bookmarks", :action => "index" })
   post("/bookmark_movie/:movie_id", { :controller => "bookmarks", :action => "create" })
+  post("/bookmark_movie", { :controller => "bookmarks", :action => "create" })
+  post("/un_bookmark", { :controller => "bookmarks", :action => "un_bookmark" })
 
 end

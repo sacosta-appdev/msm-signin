@@ -1,5 +1,21 @@
 <h1><%= @current_username.first_name %> <%= @current_username.last_name %>'s bookmarks</h1>
 
+<p>
+  <form action="/bookmark_movie"  method="post" >
+
+    <div>
+      <select name="movie_id" id="movie_id_box">
+        <% @all_movies.each do |a_movie| %>
+          <option value="<%= a_movie.id %>"><%= a_movie.title %></option>
+        <% end %>
+      </select>
+      <button>Bookmark this movie!</button>
+     </div>
+
+  </form>
+</p>
+
+
 <div>
   <table border = 1>
     <tr>

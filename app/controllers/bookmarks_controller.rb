@@ -2,6 +2,8 @@ class BookmarksController < ApplicationController
 
   def index
 
+    @all_movies = Movie.all
+
     user_id = session.fetch(:user_id)
     @current_username = User.where({ :id => user_id })[0]
     @bookmarks = Bookmark.where({ :user_id => user_id })
@@ -32,6 +34,12 @@ class BookmarksController < ApplicationController
       redirect_to("/movies/#{movie_id}", { :alert => new_bookmark.errors.full_messages.to_sentence })
     end
 
+
+  end
+
+  def un_bookmark
+
+    
 
   end
 
