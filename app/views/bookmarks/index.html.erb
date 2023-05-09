@@ -1,0 +1,21 @@
+<h1><%= @current_username.first_name %> <%= @current_username.last_name %>'s bookmarks</h1>
+
+<div>
+  <table border = 1>
+    <tr>
+      <th>Movie</th>
+      <th>Created at</th>
+      <th></th>
+    </tr>
+
+
+    <% @bookmarks.each do |a_bookmark| %>
+      <tr>
+        <td><%= a_bookmark.movie.title %></td>
+        <td><%= a_bookmark.created_at %></td>
+        <td><a href="/un_bookmark">Un-bookmark</a></td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>

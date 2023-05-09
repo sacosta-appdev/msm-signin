@@ -20,6 +20,18 @@
       </div>
     </div>
 
+    <% if session.fetch(:user_id) != nil %>
+      <p>
+        <form action="/bookmark_movie/<%= @the_movie.id %>"  method="post" >
+
+          <div>
+            <button>Bookmark this movie!</button>
+          </div>
+
+        </form>
+      </p>
+    <% end %>
+
     <dl>
       <dt>
         Title
